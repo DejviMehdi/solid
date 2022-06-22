@@ -1,14 +1,20 @@
 package o.before;
 
-public class Applicant {
-    String firstName;
-    String lastName;
-    EmployeeType typeOfEmployee;
-
+public class Applicant extends Base {
+    private EmployeeType typeOfEmployee;
 
     public Applicant(String firstName, String lastName, EmployeeType typeOfEmployee) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        super.setFirstName(firstName);
+        super.setLastName(lastName);
         this.typeOfEmployee = typeOfEmployee;
     }
+
+    public EmployeeType getTypeOfEmployee() {
+        return this.typeOfEmployee;
+    }
+
+    public void setTypeOfEmployee(EmployeeType typeOfEmployee) {
+        this.typeOfEmployee = typeOfEmployee;
+    }
+
 }

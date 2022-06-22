@@ -1,6 +1,6 @@
-package s.before;
+package o.before;
 
-public class Person {
+public abstract class Base {
     private String firstName;
     private String lastName;
 

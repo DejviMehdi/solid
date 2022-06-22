@@ -1,6 +1,6 @@
 package l.before;
 
-public class Manager extends Employee {
+public class Manager extends ManagedEmployee {
 
     @Override
     public void calculatePerHourRate(int rank) {

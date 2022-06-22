@@ -4,19 +4,19 @@ public class Accounts {
     public Employee create(Applicant person) {
         Employee employee = new Employee();
 
-        employee.firstName = person.firstName;
-        employee.lastName = person.lastName;
-        employee.email = String.format("%s.%s@example.com", person.firstName, person.lastName);
+        employee.setFirstName(person.getFirstName());
+        employee.setLastName(person.getLastName());
+        employee.setEmail(String.format("%s.%s@example.com", person.getFirstName(), person.getLastName()));
 
-        switch (person.typeOfEmployee) {
+        switch (person.getTypeOfEmployee()) {
             case staff:
                 break;
             case manager:
-                employee.isManager = true;
+                employee.setManager(true);
                 break;
             case executive:
-                employee.isManager = true;
-                employee.isExecutive = true;
+                employee.setManager(true);
+                employee.setExecutive(true);
                 break;
         }
 
