@@ -2,7 +2,7 @@ package i.before;
 
 import java.time.LocalDateTime;
 
-public class AudioBook implements LibraryItem {
+public class AudioBook implements LibraryItem, AudioBookIMPLEMENTs {
     String author;
     LocalDateTime borrowDate;
     String borrower;
@@ -12,10 +12,19 @@ public class AudioBook implements LibraryItem {
     String title;
     int runtimeInMinutes;
 
-
     @Override
     public String getAuthor() {
         return author;
+    }
+
+    @Override
+    public int getRunTimeInMinutes() {
+        return runtimeInMinutes;
+    }
+
+    @Override
+    public int getPages() {
+        return -1;
     }
 
     @Override
@@ -39,11 +48,6 @@ public class AudioBook implements LibraryItem {
     }
 
     @Override
-    public int getPages() {
-        return -1;
-    }
-
-    @Override
     public String getTitle() {
         return title;
     }
@@ -62,9 +66,5 @@ public class AudioBook implements LibraryItem {
     @Override
     public LocalDateTime getDueDate() {
         return borrowDate.plusDays(checkOutDurationInDays);
-    }
-
-    public int getRuntimeInMinutes() {
-        return runtimeInMinutes;
     }
 }

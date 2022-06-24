@@ -4,7 +4,7 @@ import jdk.jshell.spi.ExecutionControl;
 
 import java.time.LocalDateTime;
 
-public class ReferenceBook implements LibraryItem {
+public class ReferenceBook implements LibraryItem, ReferenceBookIMPLEMENTS{
     String author;
     LocalDateTime borrowDate;
     String borrower;
@@ -13,10 +13,14 @@ public class ReferenceBook implements LibraryItem {
     int pages;
     String title;
 
-
     @Override
     public String getAuthor() {
         return author;
+    }
+
+    @Override
+    public int getPages() {
+        return pages;
     }
 
     @Override
@@ -37,11 +41,6 @@ public class ReferenceBook implements LibraryItem {
     @Override
     public String getLibraryId() {
         return libraryId;
-    }
-
-    @Override
-    public int getPages() {
-        return pages;
     }
 
     @Override

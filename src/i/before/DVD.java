@@ -3,7 +3,7 @@ package i.before;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class DVD implements LibraryItem {
+public class DVD implements LibraryItem, DVDIMPLEMENTS{
     String author;
     LocalDateTime borrowDate;
     String borrower;
@@ -15,8 +15,23 @@ public class DVD implements LibraryItem {
     int runtimeInMinutes;
 
     @Override
+    public int getRuntimeInMinutes() {
+        return runtimeInMinutes;
+    }
+
+    @Override
+    public List<String> getActors() {
+        return actors;
+    }
+
+    @Override
     public String getAuthor() {
-        return "";
+        return author;
+    }
+
+    @Override
+    public int getPages() {
+        return -1;
     }
 
     @Override
@@ -40,11 +55,6 @@ public class DVD implements LibraryItem {
     }
 
     @Override
-    public int getPages() {
-        return -1;
-    }
-
-    @Override
     public String getTitle() {
         return title;
     }
@@ -63,13 +73,5 @@ public class DVD implements LibraryItem {
     @Override
     public LocalDateTime getDueDate() {
         return borrowDate.plusDays(checkOutDurationInDays);
-    }
-
-    public List<String> getActors() {
-        return actors;
-    }
-
-    public int getRuntimeInMinutes() {
-        return runtimeInMinutes;
     }
 }

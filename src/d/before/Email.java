@@ -1,7 +1,8 @@
 package d.before;
 
-public class Email {
+public class Email implements SendEmailMessage {
+    @Override
     public void sendEmail(Person person, String message) {
-        System.out.println(String.format("Simulating sending an email to %s", person.email));
+        System.out.printf("Simulating sending an email to %s", person.email);
     }
 }

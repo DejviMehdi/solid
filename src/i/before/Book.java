@@ -2,7 +2,7 @@ package i.before;
 
 import java.time.LocalDateTime;
 
-public class Book implements LibraryItem {
+public class Book implements LibraryItem, BookIMPLEMENTS {
     String author;
     LocalDateTime borrowDate;
     String borrower;
@@ -10,7 +10,6 @@ public class Book implements LibraryItem {
     String libraryId;
     int pages;
     String title;
-
 
     @Override
     public String getAuthor() {
